@@ -13,9 +13,22 @@ svg.selectAll("rect")
 
 var newX = 300;
 
-svg.selectAll("circle")
+svg.selectAll("circle.first")
     .data(dataArray)
     .enter().append("circle")
-              .attr("cx",function(d,i){ newX+= (d*6) + (i*20); return newX; })
+              .attr("class","first")
+              .attr("cx",function(d,i){ newX+= (d*3) + (i*20); return newX; })
               .attr("cy","100")
               .attr("r",function(d){ return d*3; });
+
+
+var newX = 600;
+
+svg.selectAll("ellipse.first")
+    .data(dataArray)
+    .enter().append("ellipse")
+              .attr("class","first ")
+              .attr("cx",function(d,i){ newX+= (d*3) + (i*20); return newX; })
+              .attr("cy","100")
+              .attr("rx",function(d){ return d*3; })
+              .attr("ry","30");
